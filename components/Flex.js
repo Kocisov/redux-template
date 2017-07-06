@@ -4,7 +4,7 @@ export default createComponent(
   ({ ai = 'inherit', jc = 'inherit', fd = 'row' }) => ({
     alignItems: ai,
     display: 'flex',
-    flexDireciton: fd,
+    flexDirection: fd,
     justifyContent: jc,
   }),
   'div'
