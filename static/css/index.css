@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #3a3e3e;
+  color: var(--oc-white);
+  text-shadow: none;
+}
+
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: var(--oc-white);
+  color: var(--oc-gray-9);
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+p,
+a {
+  margin: 0;
+}
