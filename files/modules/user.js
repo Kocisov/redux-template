@@ -6,7 +6,7 @@ const initialState = {
   id: null,
   name: null,
   token: null,
-  authenticated: false,
+  authenticated: false
 }
 
 export default function user(state = initialState, action) {
@@ -16,7 +16,7 @@ export default function user(state = initialState, action) {
     case USER_LOGGED_IN:
       return {
         ...payload,
-        authenticated: true,
+        authenticated: true
       }
 
     case USER_LOGGED_OUT:
@@ -34,7 +34,7 @@ export function fakeLogin() {
       id: 1,
       name: 'ravi',
       avatar:
-        'https://pbs.twimg.com/profile_images/775100021045768192/-GcozVXq_400x400.jpg',
-    },
+        'https://pbs.twimg.com/profile_images/775100021045768192/-GcozVXq_400x400.jpg'
+    }
   }
 }

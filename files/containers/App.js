@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Route, withRouter } from 'react-router-dom'
 import Home from './Home'
-import Layout from 'components/Layout'
+import { Layout } from '../components'
 
 class App extends Component {
   render() {
@@ -14,9 +14,9 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ user }) {
   return {
-    user: state.user,
+    user
   }
 }
 

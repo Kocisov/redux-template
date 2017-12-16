@@ -1,0 +1,31 @@
+{
+  "name": "redux-template",
+  "description": "Create Redux Boilerplate in Directory",
+  "version": "1.0.0",
+  "author": "kocisov",
+  "bin": {
+    "rdxtmplt": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Kocisov/redux-template/issues"
+  },
+  "dependencies": {
+    "fs-extra": "^5.0.0"
+  },
+  "homepage": "https://github.com/Kocisov/redux-template#readme",
+  "keywords": [
+    "Boilerplate",
+    "Node",
+    "React",
+    "Redux"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kocisov/redux-template.git"
+  },
+  "scripts": {
+    "try": "rdxtmplt ."
+  }
+}

@@ -1,16 +1,20 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import Title from 'components/Title'
+import { Page, Text } from '../components'
 
 class Home extends PureComponent {
   render() {
-    return <Title>Home</Title>
+    return (
+      <Page>
+        <Text fontSize={14}>Home</Text>
+      </Page>
+    )
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ user }) {
   return {
-    user: state.user,
+    user
   }
 }
 

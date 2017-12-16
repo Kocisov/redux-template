@@ -1,41 +1,29 @@
-import React from 'react'
-import { render as reactRender } from 'react-dom'
-import { Provider } from 'react-redux'
-import { Provider as FelaProvider } from 'react-fela'
-import { ConnectedRouter as Router } from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
-import registerServiceWorker from './registerServiceWorker'
-import createStore from './store'
-import { getRenderer, getMountNode } from './fela'
-import App from './containers/App'
-import './static/css/colors.css'
-import './static/css/normalize.css'
-import './static/css/index.css'
+#!/usr/bin/env node
 
-const history = createHistory()
-const store = createStore(history)
-const root = document.getElementById('root')
+const { realpathSync, copy } = require('fs-extra')
+const { resolve } = require('path')
+const { execSync } = require('child_process')
 
-function render(Component) {
-  reactRender(
-    <Provider store={store}>
-      <FelaProvider renderer={getRenderer()} mountNode={getMountNode()}>
-        <Router history={history}>
-          <Component />
-        </Router>
-      </FelaProvider>
-    </Provider>,
-    root
-  )
-}
+const activeDirectory = realpathSync(process.cwd())
+const templateDir = resolve(__dirname, 'files')
+const srcDirectory = resolve(activeDirectory, 'src')
 
-render(App)
+const exec = (command, env) => execSync(command, { stdio: 'inherit', env })
 
-if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const NextApp = require('./containers/App').default
-    render(NextApp)
-  })
-}
+copy(templateDir, srcDirectory)
 
-registerServiceWorker()
+const deps = [
+  'history',
+  'localforage',
+  'react-icons',
+  'react-motion',
+  'react-redux',
+  'react-router-dom',
+  'react-router-redux@next',
+  'redux-persist',
+  'redux-thunk',
+  'redux',
+  'styled-components'
+]
+
+exec(`pnpm install ${deps.join(' ')}`)
